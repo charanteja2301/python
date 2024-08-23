@@ -1,0 +1,21 @@
+def sort_and_replace(lst):
+    neg_count = 0
+    neg_sum = 0
+    for i in range(len(lst)):
+        if lst[i] < 0:
+            neg_count += 1
+            neg_sum += lst[i]
+    avg = neg_sum / neg_count if neg_count > 0 else 0
+    sorted_list = sorted([avg if x < 0 else x for x in lst])
+    return sorted_list
+
+def remove_duplicates(lst):
+    return list(set(lst))
+
+my_list = [3, -2, 5, 8, -4, 10, -6]
+
+sorted_replaced_list = sort_and_replace(my_list)
+print(sorted_replaced_list)
+
+no_duplicates_list = remove_duplicates(my_list)
+print(no_duplicates_list)
